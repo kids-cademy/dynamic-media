@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<app-descriptor>
+	<managed-classes>
+		<image-processor class="com.kidscademy.process.ImageMagickProcess" />
+	</managed-classes>
+</app-descriptor>
