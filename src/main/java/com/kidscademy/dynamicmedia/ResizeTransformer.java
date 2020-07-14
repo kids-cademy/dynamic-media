@@ -28,7 +28,7 @@ public class ResizeTransformer implements Transformer {
 	return PATTERN;
     }
 
-    private static final Pattern PATTERN = Pattern.compile("(\\d+)x(\\d+)");
+    private static final Pattern PATTERN = Pattern.compile("(\\d+)?x(\\d+)?");
 
     @Override
     public void exec(File source, File target, Matcher matcher) throws IOException {
@@ -37,8 +37,8 @@ public class ResizeTransformer implements Transformer {
 	Params.notNull(target, "Media target file");
 	Params.notNull(matcher, "Expression matcher");
 
-	int width = Integer.parseInt(matcher.group(1));
-	int height = Integer.parseInt(matcher.group(2));
+	String width = matcher.group(1);
+	String height = matcher.group(2);
 	imagick.exec(Command.format("${source} -resize ${width}x${height} ${target}", source, width, height, target));
     }
 }

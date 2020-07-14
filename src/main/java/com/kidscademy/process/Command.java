@@ -39,8 +39,10 @@ public final class Command {
 			throw new BugError("Not enough arguments provided for given command format.");
 		    }
 		    Object arg = args[argIndex];
-		    // special handling for files argument; always uses absolute path
-		    valueBuilder.append(arg instanceof File ? ((File) arg).getAbsolutePath() : arg.toString());
+		    if (arg != null) {
+			// special handling for files argument; always uses absolute path
+			valueBuilder.append(arg instanceof File ? ((File) arg).getAbsolutePath() : arg.toString());
+		    }
 		    ++argIndex;
 		    state = 1;
 		}
