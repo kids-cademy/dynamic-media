@@ -1,10 +1,15 @@
 package com.kidscademy.dynamicmedia.unit;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.notNullValue;
+import static org.hamcrest.io.FileMatchers.aFileNamed;
+import static org.hamcrest.io.FileMatchers.aFileWithAbsolutePath;
 import static org.hamcrest.io.FileMatchers.aFileWithSize;
-import static org.hamcrest.io.FileMatchers.*;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.io.FileMatchers.anExistingDirectory;
+import static org.hamcrest.io.FileMatchers.anExistingFile;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.isNull;
